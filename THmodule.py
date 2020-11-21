@@ -51,19 +51,19 @@ def THdot(t,x,param):
 #########################################################################
 # step function definition for TH input #################################
 # mass flow rate step
-def G_step(t,dlogG=1.1,T=35):
+def G_step(t,G0,dlogG=1.1,T=np.inf):
     if t<T:
         return G0
     else:
         return dlogG*G0
 # Inlet temperature step
-def Tin_step(t,dlogTin=1.1,T=np.inf):
+def Tin_step(t,Tin0,dlogTin=1.1,T=np.inf):
     if t<T:
         return Tin0
     else:
         return dlogTin*Tin0
 # Power step
-def P_step(t,dlogP=1.1,T=15):
+def P_step(t,P0,dlogP=1.1,T=1):
     if t<T:
         return P0
     else:
