@@ -20,9 +20,9 @@ I = np.array([0])
 # data loading
 [P0,Tin0,G0,Mf,Cf,Mc,Cc,K,tauf,tauc,u0] = THdataBuilder()
 # input/state variable initializing
-P = P0*np.array([1.0 for ii in rang(N)])
-G = G0*np.array([1.0 for ii in rang(N)])
-Tin = Tin0*np.array([1.0 for ii in rang(N)])
+P = P0*np.array([1.0 for ii in range(N)])
+G = G0*np.array([1.0 for ii in range(N)])
+Tin = Tin0*np.array([1.0 for ii in range(N)])
 # statedot matrix (input dependent) init
 A = np.array([[-1/tauf,1/tauf],[1/tauc,0.0]])
 # TH statedot parameters (see THmodule)
@@ -79,7 +79,7 @@ plt.xlabel("Time [s]")
 plt.ylabel("Fuel Temperature [°C]")
 plt.title("Fuel Temperature time profile")
 plt.grid()
-plt.savefig('Tft.png')
+plt.savefig('THTft.png')
 
 plt.figure(3)
 plt.plot(t,Tc)
@@ -87,7 +87,7 @@ plt.xlabel("Time [s]")
 plt.ylabel("Coolant Temperature [°C]")
 plt.title("Coolant Temperature time profile")
 plt.grid()
-plt.savefig('Tct.png')
+plt.savefig('THTct.png')
 
 # to show all figures
 #plt.show()
