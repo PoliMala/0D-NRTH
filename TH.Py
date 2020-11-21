@@ -36,9 +36,6 @@ I       = np.array([0])
 # ^ links a passage in the integration step with the corrisponding passage
 #   in the solver
 
-# initializing solution
-sol = [u0]
-
 def statedot(t,x):
 # function that evaluates the evolution of coolant and fuel temperatures
 # given P, Tin (coolant), G as parameters.
@@ -74,9 +71,9 @@ solver.set_integrator('lsoda',max_step = dt/10)
 # ^ here is important to set an upper limit for the integration step <dt
 #   because, it is needed as sinc between the integrstion step an the
 #   loading of the input functions
-#solver.set_integrator('zvode', method = 'bdf', order = 15)
-# ^^ this is not so stable
 solver.set_initial_value(u0,t0)
+# initializing solution
+sol = [u0]
 
 xdot = []
 for i in range(0,N-1):
